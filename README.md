@@ -1,4 +1,4 @@
-Find & Fetch Animal SVGs
+# Find & Fetch Animal SVGs
 
 ![Animals](./animals.gif)
 
