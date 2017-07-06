@@ -8,7 +8,7 @@ Simply find & use some animal svgs.
 to copyright issues.**
 
 Rather you can use this repo if you want to have
-a look how you could build such an API using nodeJS + express in under 100 lines of code!
+a look how you could build such an API using nodeJS + express in under 50 lines of code!
 
 Simply check out the `server.js` file.
 
