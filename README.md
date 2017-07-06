@@ -4,8 +4,8 @@
 
 Simply find & use some animal svgs.
 
-Note that the svgs are not included in this repository due
-to copyright issues.
+**The svgs are not included in this repository due
+to copyright issues.**
 
 Rather you can use this repo if you want to have
 a look how you could build such an API using nodeJS + express in under 100 lines of code!
