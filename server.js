@@ -5,9 +5,6 @@ const server = express();
 const fs = require('fs');
 
 const animalsPath = path.join(__dirname, '/animals');
-const webPath = path.join(__dirname, '');
-
-const tigerPath = path.join(animalsPath, '141684-animal-collection/svg/tiger.svg')
 
 server.get('/find', function (req, res) {
   const ext = req.query.ext ? '\\.' + req.query.ext : '';
