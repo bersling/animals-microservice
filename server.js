@@ -1,4 +1,4 @@
-var find = require("find");
+const find = require("find");
 const express = require('express');
 const path = require('path');
 const server = express();
