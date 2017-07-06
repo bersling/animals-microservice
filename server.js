@@ -13,9 +13,10 @@ server.get('/find', function (req, res) {
     const pattern = new RegExp(`(.*?)${q}(.*?)${ext}`)
     find.file(pattern, animalsPath, function(files) {
       const randomFile = files[Math.floor(Math.random()*files.length)];
+      const relPath = path.relative(__dirname, randomFile);
       res.send({
-        path: randomFile,
-        urlEncodedPath: encodeURIComponent(randomFile)
+        path: relPath,
+        urlEncodedPath: encodeURIComponent(relPath)
       });
     })
   } else {
@@ -26,8 +27,7 @@ server.get('/find', function (req, res) {
 server.get('/animals', function(req, res) {
   if (req.query.path) {
     const pathToAnimal = req.query.path;
-    console.log(pathToAnimal);
-    fs.readFile(pathToAnimal,
+    fs.readFile(path.join(__dirname, pathToAnimal),
       {encoding: 'utf-8'},
       function (err, data) {
       if (!err) {
