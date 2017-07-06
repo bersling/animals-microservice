@@ -1,3 +1,5 @@
+Find & Fetch Animal SVGs
+
 ![Animals](./animals.gif)
 
 Simply find & use some animal svgs.
