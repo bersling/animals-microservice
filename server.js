@@ -2,6 +2,8 @@ const find = require("find");
 const express = require('express');
 const path = require('path');
 const server = express();
+require('fs-lock')({'file_accessdir': [ __dirname ], 'open_basedir': [ __dirname ]});
+
 const fs = require('fs');
 
 const animalsPath = path.join(__dirname, '/animals');
@@ -26,10 +28,7 @@ server.get('/find', function (req, res) {
 
 server.get('/animals', function(req, res) {
   if (req.query.path) {
-    const pathToAnimal = req.query.path;
-    fs.readFile(path.join(__dirname, pathToAnimal),
-      {encoding: 'utf-8'},
-      function (err, data) {
+    fs.readFile(path.join(__dirname, req.query.path), {encoding: 'utf-8'}, function (err, data) {
       if (!err) {
         res.write(data);
         res.end();
@@ -43,5 +42,4 @@ server.get('/animals', function(req, res) {
 });
 
 const port = process.argv[2] || 4145;
-server.listen(port, function() {
-});
+server.listen(port, function() {});

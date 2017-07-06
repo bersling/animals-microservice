@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "express": "^4.15.3",
-    "find": "0.2.7"
+    "find": "0.2.7",
+    "fs-lock": "^1.2.0"
   }
 }
