@@ -40,5 +40,7 @@ server.get('/animals', function(req, res) {
   }
 });
 
-const port = process.argv[2] || 4145;
-server.listen(port, function() {});
+const port = process.argv[2] || 5000;
+server.listen(port, function() {
+  console.log('started server at port', port);
+});
