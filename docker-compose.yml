@@ -1,0 +1,15 @@
+version: '3.2'
+services:
+  animals:
+    image: bersling/animals
+    networks:
+      - web
+      - default
+    labels:
+      - "traefik.frontend.rule=Host:animals2.tsmean.com"
+      - "traefik.domain=tsmean.com"
+      - "traefik.docker.network=web"
+
+networks:
+  web:
+    external: true

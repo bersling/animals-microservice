@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
 
-rootdir="animals"
-server="ubuntu@35.158.213.131"
+server=ubuntu@18.196.229.25
 
-echo "Upload contents"
-rsync -avz --delete -e 'ssh' "./" "${server}:${rootdir}"
-
-echo "(Re-)Start server"
-ssh ${server} "forever stop ${rootdir}/server.js"
-ssh ${server} "forever start ${rootdir}/server.js"
-
-echo "Done!"
+scp -r ./docker-compose.yml $server:~/animals/docker-compose.yml
+ssh $server "sudo docker stack deploy -c ./animals/docker-compose.yml animals"

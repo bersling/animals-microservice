@@ -33,3 +33,7 @@ then get the svg:
 ```
 
 That's it!
+
+## Run locally with docker
+
+docker build -t animals . && docker run -p 57253:57253 animals
