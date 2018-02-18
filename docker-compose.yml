@@ -2,6 +2,11 @@ version: '3.2'
 services:
   animals:
     image: bersling/animals
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 256M
     networks:
       - web
       - default
