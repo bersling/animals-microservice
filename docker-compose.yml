@@ -7,14 +7,15 @@ services:
         limits:
           cpus: '0.50'
           memory: 256M
+      labels:
+        - "traefik.frontend.rule=Host:animals2.tsmean.com"
+        - "traefk.port=57253"
+        - "traefik.docker.network=traefik"
+    ports:
+      - "57253:57253"
     networks:
-      - web
-      - default
-    labels:
-      - "traefik.frontend.rule=Host:animals2.tsmean.com"
-      - "traefik.domain=tsmean.com"
-      - "traefik.docker.network=web"
+      - traefik
 
 networks:
-  web:
+  traefik:
     external: true
