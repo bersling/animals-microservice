@@ -7,9 +7,11 @@ services:
         limits:
           cpus: '0.50'
           memory: 256M
+      placement:
+        constraints: [node.role == manager]
       labels:
         - "traefik.frontend.rule=Host:animals2.tsmean.com"
-        - "traefk.port=57253"
+        - "traefik.port=57253"
         - "traefik.docker.network=traefik"
     ports:
       - "57253:57253"
