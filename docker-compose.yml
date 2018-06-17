@@ -3,12 +3,13 @@ services:
   animals:
     image: bersling/animals
     deploy:
+      # placement:
+      #   constraints:
+      #     - node.labels.w1 == true
       resources:
         limits:
           cpus: '0.50'
           memory: 256M
-      placement:
-        constraints: [node.role == manager]
       labels:
         - "traefik.frontend.rule=Host:animals2.tsmean.com"
         - "traefik.port=57253"
